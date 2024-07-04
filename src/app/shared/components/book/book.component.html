@@ -1,0 +1,13 @@
+<div class="book" (click)="onClick()">
+  <section class="book__image">
+    <img *ngIf="book.imageUrl" [src]="book.imageUrl" (error)="onImageError(image)" #image />
+  </section>
+
+  <section class="book__info">
+    <span class="book__info__title">{{ book.title }}</span>
+    <div class="book__info__addition">
+      <div class="book__info__author">{{ book.author }}</div>
+      <div class="book__info__year">{{ book.publicationYear }}</div>
+    </div>
+  </section>
+</div>

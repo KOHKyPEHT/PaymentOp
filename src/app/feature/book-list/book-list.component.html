@@ -1,0 +1,9 @@
+<div class="book-list">
+  <div *ngFor="let book of books$ | async; index as idx;" class="book-list__item">
+    <app-book [book]="book" (bookClick)="openDetails($event)"></app-book>
+    <div class="book-list__item__actions">
+      <button mat-raised-button color="primary" (click)="editItem(book, idx)">Edit</button>
+      <button mat-raised-button color="warn" (click)="deleteItem(book, idx)">Delete</button>
+    </div>
+  </div>
+</div>

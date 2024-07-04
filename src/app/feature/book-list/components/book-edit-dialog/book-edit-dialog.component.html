@@ -1,0 +1,33 @@
+<h2 *ngIf="data" mat-dialog-title>Edit book</h2>
+<h2 *ngIf="!data" mat-dialog-title>Add book</h2>
+
+<form mat-dialog-content [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+    <mat-error *ngIf="bookForm.controls.title.hasError('required')">Title required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author" />
+    <mat-error *ngIf="bookForm.controls.author.hasError('required')">Author required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input matInput formControlName="publicationYear" />
+    <mat-error *ngIf="bookForm.controls.publicationYear.hasError('required')">Year required</mat-error>
+    <mat-error *ngIf="bookForm.controls.publicationYear.hasError('pattern')">Year incorrect</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <input matInput formControlName="imageUrl" placeholder="https://image.jpg" />
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" type="submit" [disabled]="bookForm.invalid">Save</button>
+    <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+</form>
