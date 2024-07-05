@@ -1,11 +1,12 @@
+import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 import { IBook } from '@shared/models/book.interface';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-book-edit-dialog',
@@ -32,7 +33,7 @@ export class BookEditDialogComponent {
   }
 
   onSubmit(): void {
-    const test = this.bookForm.getRawValue() satisfies IBook;
-    console.log(test);
+    const book = this.bookForm.getRawValue() satisfies IBook;
+    this.dialogRef.close(book);
   }
 }

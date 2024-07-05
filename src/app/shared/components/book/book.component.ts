@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IBook } from '../../models/book.interface';
+
+import { IBook } from '@shared/models/book.interface';
 
 @Component({
   selector: 'app-book',

@@ -1,7 +1,8 @@
+import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+
 import { IBook } from '@shared/models/book.interface';
 
 @Component({
